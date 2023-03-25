@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Sima</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+	<style>
+		body {
+			font-family: 'Open Sans Italic', sans-serif;
+			font-style: italic;
+			background-color: #FFE8E5;
+			padding: 20px;
+			text-align: center;
+		}
+
+		p {
+			font-size: 1.2rem;
+			line-height: 1.5;
+			color: #333;
+			margin-bottom: 20px;
+			text-align: justify;
+			border: 1px solid #ccc;
+			padding: 10px;
+			background-color: aliceblue;
+		}
+
+		button.button.lovedsgn {
+			background: #f3c1e6;
+			background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f3c1e6), to(#de66c0));
+			background: -moz-linear-gradient(#f3c1e6, #de66c0);
+			background: linear-gradient(#f3c1e6, #de66c0);
+			border: solid 1px #cd5daf;
+			border-bottom: solid 3px #ce5eb0;
+			box-shadow: inset 0 0 0 1px #e998d3;
+			color: #fff;
+			text-shadow: 0 1px 0 #ce5eb0;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		button.button.lovedsgn:hover {
+			background: #de66c0;
+			background: -webkit-gradient(linear, 0 0, 0 bottom, from(#de66c0), to(#f3c1e6));
+			background: -moz-linear-gradient(#de66c0, #f3c1e6);
+			background: linear-gradient(#de66c0, #f3c1e6);
+			border: solid 1px #cd5daf;
+			border-bottom: solid 3px #ce5eb0;
+			box-shadow: inset 0 0 0 1px #e998d3;
+			padding: 10px;
+			border-radius: 5px;
+		}
+
+		button.button.lovedsgn:active {
+			background: #de66c0;
+			background: -webkit-gradient(linear, 0 0, 0 bottom, from(#de66c0), to(#f3c1e6));
+			background: -moz-linear-gradient(#de66c0, #f3c1e6);
+			background: linear-gradient(#de66c0, #f3c1e6);
+			border: solid 1px #cd5daf;
+			box-shadow: inset 0 10px 15px 0 #ce5eb0;
+			padding: 10px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<button onclick="changeColor()" class="button lovedsgn">Renk Değiştir</button>
+	<script>
+		function changeColor() {
+			var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+			document.body.style.backgroundColor = randomColor;
+		}
+	</script>
+	<div class="container">
+		<p>Evet haber vermemişti, gitmeden önce. Fakat önceki konuşmalarımız geldi aklıma, gidecekti bi süreliğine. Bu
+			kadar ani ve habersiz olmasını beklemiyordum. Bi süreliğine gittiğine o kadar çok inanmak istiyorum ki,
+			hatta galiba inanıyorum. O gerçekten çok farklı ama sanırım bunu bilmiyor, abartıyorum sanıyor. Bir gün
+			yeniden geldiğinde tam burada bekliyor olacağım. Şu an tarif edemeyeceğim bir duygu içindeyim, hafif bi
+			kırgınlık hatta kızgınlık var içimde nedensizce, sanırım hissettiklerim bunlardan fazlası. En kötüsü de
+			dönmezse bir daha asla ulaşamayacağım. Mutlaka kendince sebepleri vardır, doğal olarak sebebini merak
+			ediyorum, kendisini merak ettiğim gibi. Daha önceden yüzünü görmediğim, sesini işitmediğim birine hiç bu
+			kadar bağlanmamıştım. Yine her zamanki gibi aşırı duygusal davranıyorum ama bu sefer içime atmaktansa
+			düşüncelerimi buraya döküyorum, aslında iyi geliyor fakat onun kadar değil. Çok kısa sürede o kadar çok şey
+			konuştuk ki, zamanını gerçekten bana ayırdığını hissettim. Gerçekten tanımayı o kadar isterdim ki... Hep
+			söylediği gibi gerçekten çokiyiydi. Belki de biraz fazla iyiydi. Bana gerçekten çok şey kattı bu kısa süre
+			içerisinde. Hiç izlemem dediğim kore dizileri, onlarca yeni şarkı ki bunlar gerçekten çok iyiydi, hiçbirini
+			laf olsun diye övmedim, ders çalışmayı sevdiğime bile ikna etti. Gün içerisinde ne yapsam akşam anlatacak
+			bir şeyim olacak diye düşünüyordum. Bugün de hevesle geldim. The K2'yi bir günde nasıl 6 bölüm izlediğimi
+			anlatacaktım, Ramazan'ın ilk günü nasıl geçmiş diye soracaktım ve muhabbet yine uzayacaktı. Bir gün
+			geldiğinde bu yazdığım metin için çok utanacağım muhtemelen, ama dayanamayıp bundan da bahsederim ben.
+			Hakkında senin bildiklerine nazaran hiç bir şey bilmediğim için ona ulaşmam mümkün olmayacak, içimdeki bu
+			inanç beni ayakta tutacak. Her zamanki gibi Neyseee diyerek şimdilik burada sonlandırıyorum. Çünkü hiçbir
+			zaman neyse'm olmadı hep daha fazlasını anlatmak istiyorum. Gelince konuşacak çok şeyimiz olacağını
+			düşünerek burada bitiriyorum.</p>
+		<p>NOT: Engellenmediğimi ve dediği gibi hesabın bi süreliğine kapatılıp kapatılmadığını doğrulamak için
+			bahsettiğimiz yan hesabı açtım ve teyit ettim. Evet engellenmemişim ☺️</p>
+	</div>
+</body>
+
+</html>
