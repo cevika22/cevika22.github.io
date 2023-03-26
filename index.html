@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Tatlı HTML Sitesi</title>
-    <style>
-      body {
-        background-color: #ff00c8;
-        background-size: cover;
-        text-align: center;
-      }
-      
-      h1 {
-        text-align: center;
-        font-size: 50px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px #000000;
-        text-transform: uppercase;
-      }
-      
-      p {
-        text-align: center;
-        font-size: 24px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        color: #ffffff;
-        text-shadow: 2px 2px 4px #000000;
-      }
-      button.button.lovedsgn {
+
+<head>
+	<title>Tatlı HTML Sitesi</title>
+	<style>
+		body {
+			background-color: #ffbbf0;
+			background-size: cover;
+			text-align: center;
+		}
+
+		h1 {
+			text-align: center;
+			font-size: 50px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: #ffffff;
+			text-shadow: 2px 2px 4px #000000;
+			text-transform: uppercase;
+		}
+
+		p {
+			text-align: center;
+			font-size: 24px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			color: #ffffff;
+			text-shadow: 2px 2px 4px #000000;
+		}
+
+		button.button.lovedsgn {
 			background: #f3c1e6;
 			background: -webkit-gradient(linear, 0 0, 0 bottom, from(#f3c1e6), to(#de66c0));
 			background: -moz-linear-gradient(#f3c1e6, #de66c0);
@@ -61,17 +63,123 @@
 			padding: 10px;
 			border-radius: 5px;
 		}
-    </style>
-  </head>
-  <body>
-    <h1>Sima'nın Bekleme Odası</h1>
-    <button onclick="changeColor()" class="button lovedsgn">Renk Değiştir</button>
+
+		body {
+			font-family: sans-serif;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 2em;
+			margin: 0;
+		}
+
+		.message {
+			margin: 0.5em;
+			font-size: 1.2em;
+		}
+
+		.choices {
+			display: flex;
+			justify-content: center;
+			gap: 1em;
+			margin: 1em;
+		}
+
+		button {
+			font-size: 1.2em;
+			padding: 0.5em 1em;
+			border: 2px solid #333;
+			border-radius: 5px;
+			background-color: #fff;
+			color: #333;
+			cursor: pointer;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		button:hover {
+			background-color: #333;
+			color: #fff;
+		}
+
+		.result {
+			margin: 1em;
+			font-size: 1.5em;
+		}
+
+		.game {
+			border: 3px solid #000000;
+			border-radius: 10px;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Sİma'nın Bekleme Odası</h1><br><br>
+	<button onclick="changeColor()" class="button lovedsgn">Renk Değiştir</button>
 	<script>
 		function changeColor() {
 			var randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
 			document.body.style.backgroundColor = randomColor;
 		}
 	</script>
-    <p>Seni Haksız çıkarıcam maalesef</p>
-  </body>
+	<p>Seni Haksız çıkarıcam maalesef</p>
+
+	<div class="game">
+		<h1>Taş, Kağıt, Makas</h1>
+		<p class="message">Hanımefendi rica etsem birini seçer misiniz?</p>
+		<div class="choices">
+			<button id="taş">Taş</button>
+			<button id="kağıt">Kağıt</button>
+			<button id="makas">Makas</button>
+		</div>
+		<div class="result"></div>
+	</div>
+
+	<script>const buttons = document.querySelectorAll("button");
+		const choices = ["taş", "kağıt", "makas"];
+
+		buttons.forEach(button => {
+			button.addEventListener("click", function () {
+				const playerChoice = this.id;
+				const computerChoice = choices[Math.floor(Math.random() * 3)];
+				const result = getResult(playerChoice, computerChoice);
+				displayResult(result, playerChoice, computerChoice);
+			});
+		});
+
+		function getResult(player, computer) {
+			if (player === computer) {
+				return "tie";
+			} else if (player === "taş") {
+				return computer === "kağıt" ? "loss" : "win";
+			} else if (player === "kağıt") {
+				return computer === "makas" ? "loss" : "win";
+			} else if (player === "makas") {
+				return computer === "taş" ? "loss" : "win";
+			}
+		}
+
+		function displayResult(result, playerChoice, computerChoice) {
+			const message = document.querySelector(".message");
+			message.innerHTML = `Siz ${playerChoice} oynadınız. Ahmet ${computerChoice} seçti.`;
+			const resultDiv = document.querySelector(".result");
+			if (result === "win") {
+				resultDiv.innerHTML = "Çok iyisiniz!";
+				resultDiv.style.color = "green";
+			} else if (result === "loss") {
+				resultDiv.innerHTML = "Kötü değilsiniz Ahmet çok iyi!";
+				resultDiv.style.color = "red";
+			} else {
+				resultDiv.innerHTML = "Aklımı okudun!";
+				resultDiv.style.color = "gray";
+			}
+		}
+
+	</script>
+
+
+</body>
+
 </html>
